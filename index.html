@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="css/color-palette.css">
+  <link rel="stylesheet" href="css/default.css">
+  <link rel="stylesheet" href="css/app-bar.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/nav-drawer.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/components.js" defer></script>
+  <script src="js/portfolio.js" defer></script>
+</head>
+<body>
+
+<!-- app bar -->
+
+<nav class="app-bar js-app-bar is-open--mobile">
+  
+  <!-- buttons inline left -->
+  
+  <div class="buttons-inline--left js-buttons-inline--left">
+
+    <!-- navigation button & back button -->
+
+    <button class="btn--menu btn--icon js-menu-button">
+      <i class="material-icons dark">menu</i>
+    </button>
+    <button class="btn--back btn--icon">
+      <i class="material-icons dark">arrow_back</i>
+    </button>
+
+    <!-- app title and back text -->
+
+    <button class=" [ app-bar__title btn--flat  ] [ title ] ">portfolio</button>
+    <button class=" [ app-bar__title--back btn--flat ] [ title ] ">Back</button>
+    <span class=" [ app-bar__subheading app-bar__subheading--margin-right ] [ subheading ]">Home</span>
+
+  </div>
+  
+  <!-- app bar search -->
+  
+  <div class="search-input__click-wrap js-search-input__click-wrap">
+    <div class="search__prompt-target js-search__prompt-target"></div>
+    <div class="search js-search">
+      <div class="search__icon js-search__icon">
+        <i class="material-icons dark">search</i>
+      </div>
+      <input class="search-input primary-text js-search-input" type="search" placeholder="Search">
+    </div>
+  </div>
+ 
+  <!-- buttons inline right -->
+  
+  <div class="buttons-inline--right search__margin-spacer--right">
+    <div class="prompt-position__target js-btn--search__prompt--target">
+      <button class="btn--search btn--icon js-btn--search">
+        <i class="material-icons dark">search</i>
+      </button>
+    </div>
+    <button class="btn--notifications btn--icon">
+      <i class="material-icons dark">notifications_none</i>
+    </button>
+    <button class="btn--profile btn--icon">
+      <i class="material-icons dark md-36">account_circle</i>
+    </button>
+  </div>
+  
+</nav>
+
+
+<!--navigation drawer -->
+
+<div class="drawer js-drawer">
+
+  <div class="drawer__title-bar js-drawer__title-bar">
+    <span class="title">portfolio</span>
+    <div class="btn--chevron--left">
+      <i class="material-icons dark">chevron_left</i>
+    </div>
+  </div>
+
+  <nav class="menu js-menu">
+
+    <!-- menu item template -->
+
+    <template class="js-menu-item-template">
+      <a class="menu__item js-menu__item">
+        <i class="material-icons dark menu__icon">account_circle</i>
+        <span class="menu__text">About dialog</span>
+      </a>
+    </template>
+
+  </nav>
+
+  <small class="copyright">&copy Chris Watland</small>
+
+</div>
+<div class="js-drawer__transparency"></div>
+
+
+<!-- main content -->
+
+<main class="content js-content">
+
+  <!-- app bar spacer -->
+
+  <div class="app-bar__spacer"></div>
+
+  <!-- empty state search text -->
+
+  <div class="empty-state__text">
+    <p class="empty-state__search-text js-empty-state__search-text is-hidden">Search to find projects by topic.</p>
+  </div>
+
+</main>
+
+
+<!-- carousel onboarding -->
+
+<div class="carousel__background js-carousel__background">
+
+  <input class="carousel__input js-carousel__input" type="radio" name="carousel" id="slide--1" checked>
+
+  <!-- carousel -->
+  
+  <div class="carousel js-carousel">
+
+    <!-- branding slide -->
+
+    <div class="carousel__intro-slide">
+
+      <!-- branding -->
+
+      <div class="branding">
+
+        <div class="logo">
+          <i class="icon--portfolio material-icons md-48">collections</i>
+          <h1 class="branding__heading">Portfolio</h1>
+        </div>
+        <p class="branding__author">by Chris Watland</p>
+        <h3 class="branding__subheading">A collection of personal projects</h3>
+
+      </div>
+
+    </div>
+
+    <!-- carousel input template -->
+
+    <template class="carousel__input-template js-carousel__input-template">
+      <input class="carousel__input js-carousel__input" type="radio" name="carousel" id="carousel__id">
+    </template>
+
+    <!-- carousel template -->
+    
+    <template class="js-carousel-template">
+
+      <!-- carousel content -->
+
+      <div class="carousel__content js-carousel__content">
+      
+        <!-- carousel illustration -->
+
+        <div class="carousel__illustration">
+
+          <!-- phone image -->
+
+          <div class="phone">
+            <div class="phone__screen js-phone__screen"></div>
+          </div>
+
+        </div>
+
+        <!-- carousel text -->
+
+        <div class="carousel__text">
+          <i class="carousel__icon material-icons md-48 md-light js-carousel__icon">exposure_plus_2</i>
+          <h1 class="carousel__headline js-carousel__headline">Calculator</h1>
+        </div>
+
+      </div>
+
+    </template>
+
+    <!-- carousel navigation -->
+
+    <div class="carousel__nav js-carousel__nav">
+
+      <!-- back arrows -->
+
+      <i class="icon--arrow-back material-icons md-light" onclick="moveBackward()">arrow_back</i>
+      <button class="btn--fab btn--fab--mini btn--fab--arrow-back primary" onclick="moveBackward()">
+        <i class="material-icons accent-text">arrow_back</i>
+      </button>
+
+      <!-- pagination -->
+
+      <div class="pagination-dots js-pagination-dots">
+          <label for="slide--1" class="pagination-dot js-pagination-dot"></label>
+        <template class="js-pagination-dot-template">
+          <label for="carousel__id" class="pagination-dot js-pagination-dot"></label>
+        </template>
+      </div>
+
+      <!-- forward arrows -->
+
+      <i class="icon--arrow-forward material-icons md-light" onclick="moveForward()">arrow_forward</i>
+      <div class="carousel__btn--done" onclick="moveForward()">DONE</div>
+      <button class="btn--fab btn--fab--mini btn--fab--arrow-forward primary" onclick="moveForward()">
+        <i class="material-icons accent-text btn--fab__icon--forward">arrow_forward</i>
+        <i class="material-icons accent-text btn--fab__icon--check">check</i>
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- feature discovery prompt -->
+
+<template class="prompt__template">
+  <div class="prompt js-prompt">
+    <div class="prompt__background">
+      <div class="prompt__tap-target" onclick="touchTarget()">
+        <i class="icon--search-prompt material-icons accent-text">search</i>
+      </div>
+      <div class="prompt__hint-text">
+        <h3 class="prompt__title">Search projects</h3>
+        <p class="prompt__subtitle">Tap to find projects by topic.</p>
+      </div>
+    </div>
+    <div class="prompt__dismiss-target" onclick="dismissPrompt()"></div>
+  </div>
+</template>
+
+  
+</body>
+</html>
