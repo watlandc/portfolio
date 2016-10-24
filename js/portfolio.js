@@ -15,42 +15,42 @@ var slides = [
     'image': '//dl.dropboxusercontent.com/s/kjgppo9s47tv8a3/Screenshot%202016-10-20%2021.51.23.png?raw=1',
     'icon': 'view_headline',
     'description': 'Accordion',
-    'url': ''
+    'url': '//watlandc.github.io/web-components/dialogs/accordion.html'
   },
   {
     'id': 'slide--4',
     'image': '//dl.dropboxusercontent.com/s/av5gk01d6e31up6/Screenshot%202016-10-20%2022.50.26.png?raw=1',
     'icon': 'contact_mail',
     'description': 'Business card',
-    'url': ''
+    'url': '//watlandc.github.io/web-components/dialogs/business-card.html'
   },
   {
     'id': 'slide--5',
     'image': '//dl.dropboxusercontent.com/s/zokw5ocu32o9nti/Screenshot%202016-10-20%2022.22.25.png?raw=1',
     'icon': 'library_books',
     'description': 'Book library',
-    'url': ''
+    'url': '//watlandc.github.io/books-modern-developer/'
   },
   {
     'id': 'slide--6',
     'image': '//dl.dropboxusercontent.com/s/l0q1gxmj45mf7x3/Screenshot%202016-10-20%2022.23.59.png?raw=1',
     'icon': 'exposure_plus_2',
     'description': 'Calculator',
-    'url': 'https://watlandc.github.io/web-components/calculator/calculator.html'
+    'url': '//watlandc.github.io/web-components/calculator/calculator.html'
   },
   {
     'id': 'slide--7',
     'image': '//dl.dropboxusercontent.com/s/u4gmk6c52oajc7s/Screenshot%202016-10-20%2022.25.36.png?raw=1',
     'icon': 'view_carousel',
     'description': 'Carousel',
-    'url': ''
+    'url': '//watlandc.github.io/portfolio/'
   },
   {
     'id': 'slide--8',
     'image': '//dl.dropboxusercontent.com/s/par6qpe5zfu78nl/Screenshot%202016-10-20%2022.40.42.png?raw=1',
     'icon': 'insert_chart',
     'description': 'Chart',
-    'url': ''
+    'url': '//watlandc.github.io/web-components/dialogs/graph.html'
   },
   {
     'id': 'slide--9',
@@ -220,7 +220,7 @@ function cookieOnboarding() {
     document.querySelector(".js-empty-state__search-text").classList.remove("is-hidden");
   }
 }
-// cookieOnboarding();
+cookieOnboarding();
 
 function touchTarget() {
   dismissPrompt();
