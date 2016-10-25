@@ -39,13 +39,6 @@ var slides = [
     'url': '//watlandc.github.io/web-components/calculator/calculator.html'
   },
   {
-    'id': 'slide--7',
-    'image': '//dl.dropboxusercontent.com/s/u4gmk6c52oajc7s/Screenshot%202016-10-20%2022.25.36.png?raw=1',
-    'icon': 'view_carousel',
-    'description': 'Carousel',
-    'url': '//watlandc.github.io/portfolio/'
-  },
-  {
     'id': 'slide--8',
     'image': '//dl.dropboxusercontent.com/s/par6qpe5zfu78nl/Screenshot%202016-10-20%2022.40.42.png?raw=1',
     'icon': 'insert_chart',
@@ -171,6 +164,8 @@ function moveForward() {
       document.querySelector(".js-carousel__background").classList.add("is-hidden");
       // reset to last slide for browser back
       carouselInputs[0].checked = true;
+      // set cookie on initial visit
+      checkCookie();
       // display feature discovery
       displayPrompt();
     }
@@ -261,4 +256,3 @@ function checkCookie() {
       }
    }
 } 
-checkCookie();
