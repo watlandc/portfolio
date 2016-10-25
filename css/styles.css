@@ -263,8 +263,6 @@
   .carousel__headline {
     margin: 0 0 0 24px;
   }
-  .carousel__intro-slide {
-  }
   #slide--4:checked ~ .carousel__content .phone__screen,
   #slide--8:checked ~ .carousel__content .phone__screen {
     background-position: left center;

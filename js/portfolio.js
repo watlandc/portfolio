@@ -150,6 +150,47 @@ for (var i = 0; i < slides.length; i++) {
 
 
 
+/*------------------------------------*\
+  #COOKIE-ONBOARDING-EXPERIENCE
+\*------------------------------------*/
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+
+  var visitedStatus = getCookie("visited");
+  if (visitedStatus != "") {
+    // document.querySelector(".js-prompt").classList.add("is-hidden");
+    document.querySelector(".js-carousel__background").classList.add("is-hidden");
+    document.querySelector(".js-empty-state__search-text").classList.remove("is-hidden");
+  } 
+} 
+checkCookie();
+
+
+
+
+
 
 /*------------------------------------*\
   #CAROUSEL-NAVIGATION
@@ -158,16 +199,17 @@ for (var i = 0; i < slides.length; i++) {
 var carouselInputs = document.querySelectorAll(".js-carousel__input");
 
 function moveForward() {
+
   for (var i = 0; i < carouselInputs.length; i++) {
     if (carouselInputs[i].checked && i === carouselInputs.length - 1) {
       // close carousel
       document.querySelector(".js-carousel__background").classList.add("is-hidden");
       // reset to last slide for browser back
       carouselInputs[0].checked = true;
-      // set cookie on initial visit
-      checkCookie();
       // display feature discovery
       displayPrompt();
+      // set cookie on first visit
+      setCookie("visited", "yes", 1);
     }
     if (carouselInputs[i].checked && i < carouselInputs.length - 1) {
       carouselInputs[i + 1].checked = true;
@@ -207,7 +249,7 @@ function dismissPrompt() {
   }
   document.querySelector(".js-empty-state__search-text").classList.remove("is-hidden");
 }
-
+// dismiss prompt and enter search focus
 function touchTarget() {
   dismissPrompt();
   enterSearchState();
@@ -217,42 +259,5 @@ function touchTarget() {
 
 
 
-/*------------------------------------*\
-  #COOKIE-ONBOARDING-EXPERIENCE
-\*------------------------------------*/
 
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-setCookie("visited", "yes", 1);
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-
-function checkCookie() {
-    var visitedStatus = getCookie("visited");
-    if (visitedStatus != "") {
-      // document.querySelector(".js-prompt").classList.add("is-hidden");
-      document.querySelector(".js-carousel__background").classList.add("is-hidden");
-      document.querySelector(".js-empty-state__search-text").classList.remove("is-hidden");
-    } else {
-      if (visitedStatus != "" && visitedStatus != null) {
-        setCookie("visited", "yes", 1);
-      }
-   }
-} 
+     
