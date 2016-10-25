@@ -214,7 +214,10 @@ function dismissPrompt() {
 // show tour and feature discovery on first visit only
 function cookieOnboarding() {
   var referringSite = document.referrer.search("watlandc");
+  console.log(document.referrer);
+  console.log(referringSite);
   if (referringSite !== -1) {
+    
     document.querySelector(".js-prompt").classList.add("is-hidden");
     document.querySelector(".js-carousel__background").classList.add("is-hidden");
     document.querySelector(".js-empty-state__search-text").classList.remove("is-hidden");
